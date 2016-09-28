@@ -22,17 +22,17 @@ public class PaletteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        Spinner spinner = (Spinner) findViewById(R.id.colorPicker);
+        ListView listView = (ListView) findViewById(R.id.listView);
 
 
 
-        adapter = new CustomAdapter(PaletteActivity.this, android.R.layout.simple_spinner_dropdown_item, strings);
+        adapter = new CustomAdapter(PaletteActivity.this, android.R.layout.simple_list_item_1, strings);
 
-        spinner.setAdapter(adapter);
+        listView.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(firstRun)
                 {
                     firstRun = false;
@@ -45,10 +45,6 @@ public class PaletteActivity extends AppCompatActivity {
 
             }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
 
 
         });

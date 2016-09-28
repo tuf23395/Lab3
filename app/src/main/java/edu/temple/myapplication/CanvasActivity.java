@@ -1,10 +1,12 @@
 package edu.temple.myapplication;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
 
 /**
  * Created by Tom on 9/27/2016.
@@ -13,6 +15,7 @@ public class CanvasActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle("Canvas Activity");
         setContentView(R.layout.activity_canvas);
 
 
@@ -23,7 +26,7 @@ public class CanvasActivity extends Activity {
         String intentDataString = receivedIntent.getExtras().getString("Color");
 
         View view = this.getWindow().getDecorView();
-        view.setBackgroundColor(Color.parseColor(intentDataString));
+        view.setBackgroundColor(Color.parseColor(intentDataString));;
 
     }
 }

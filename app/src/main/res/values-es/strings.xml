@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ColorPicker</string>
+    <string-array name="colorStrings">
+        <item>Blanco</item>
+        <item>Rojo</item>
+        <item>Verde</item>
+        <item>Amarillo</item>
+        <item>Azul</item>
+    </string-array>
+</resources>

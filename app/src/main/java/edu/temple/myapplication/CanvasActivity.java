@@ -13,6 +13,7 @@ import android.view.Window;
  * Created by Tom on 9/27/2016.
  */
 public class CanvasActivity extends AppCompatActivity {
+    static final String[] actualColors = {"White","Red","Green","Yellow","Blue"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +25,10 @@ public class CanvasActivity extends AppCompatActivity {
         Intent receivedIntent = getIntent();
 
         //  Grad the data that was passed.
-        String intentDataString = receivedIntent.getExtras().getString("Color");
+        int intentPosition = receivedIntent.getExtras().getInt("Position");
 
         View view = this.getWindow().getDecorView();
-        view.setBackgroundColor(Color.parseColor(intentDataString));;
+        view.setBackgroundColor(Color.parseColor(actualColors[intentPosition]));;
 
     }
 }
